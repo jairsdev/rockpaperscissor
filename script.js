@@ -6,3 +6,12 @@ function getComputerChoice() {
     'Scissors'; 
     return choice;
 }
+
+function getPlayerChoice() {
+    let choice = prompt("Paper, rock or scissors?");
+    return choice.trim().toLowerCase().replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())));
+}
+
+
+
+
