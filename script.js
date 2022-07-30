@@ -17,6 +17,12 @@ function playRound(computerChoice, playerChoice) {
         console.log(`You lost!!! The computer chose ${computerChoice} and you chose ${playerChoice}.`);
         return 0;
     }
+    
+    if (computerChoice === playerChoice) {
+        console.log(`Draw!!! The computer chose ${computerChoice} and you chose ${playerChoice}`);
+        return 2;
+    }
+
     console.log(`You win!!! The computer chose ${computerChoice} and you chose ${playerChoice}.`);
     return 1;
 }
@@ -25,12 +31,14 @@ function game() {
     let wins = 0;
     let defeats = 0;
     for(let i = 0; i < 5; i++) {
-        if (playRound(getComputerChoice(), getPlayerChoice())) {
+        let result = playRound(getComputerChoice(), getPlayerChoice());
+        if (result) {
             wins++;
+        } else if (result === 2) {
+            i--;
         } else {
             defeats++;
         }
-
         console.log(`Wins: ${wins} Defeats ${defeats}`);
     }
 
