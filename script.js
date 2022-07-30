@@ -14,10 +14,10 @@ function getPlayerChoice() {
 
 function playRound(computerChoice, playerChoice) {
     if ((computerChoice === "Paper" && playerChoice === "Rock") || (computerChoice === "Scissors" && playerChoice === "Paper") || (computerChoice === "Rock" && playerChoice === "Scissors")) {
-        console.log("You lost!");
+        console.log(`You lost!!! The computer chose ${computerChoice} and you chose ${playerChoice}.`);
         return 0;
     }
-    console.log("You win!");
+    console.log(`You win!!! The computer chose ${computerChoice} and you chose ${playerChoice}.`);
     return 1;
 }
 
@@ -40,6 +40,8 @@ function game() {
     }
     console.log("You lost the game!!!");
 }
+
+game();
 
 
 
