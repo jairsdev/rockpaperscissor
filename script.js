@@ -32,7 +32,7 @@ function game() {
     let defeats = 0;
     for(let i = 0; i < 5; i++) {
         let result = playRound(getComputerChoice(), getPlayerChoice());
-        if (result) {
+        if (result === 1) {
             wins++;
         } else if (result === 2) {
             i--;
