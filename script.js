@@ -21,7 +21,25 @@ function playRound(computerChoice, playerChoice) {
     return 1;
 }
 
+function game() {
+    let wins = 0;
+    let defeats = 0;
+    for(let i = 0; i < 5; i++) {
+        if (playRound(getComputerChoice(), getPlayerChoice())) {
+            wins++;
+        } else {
+            defeats++;
+        }
 
+        console.log(`Wins: ${wins} Defeats ${defeats}`);
+    }
+
+    if (wins > defeats) {
+        console.log("You won the game!!!");
+        return
+    }
+    console.log("You lost the game!!!");
+}
 
 
 
