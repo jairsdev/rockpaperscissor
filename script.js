@@ -12,6 +12,18 @@ function getPlayerChoice() {
     return choice.trim().toLowerCase().replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())));
 }
 
+function playRound(computerChoice, playerChoice) {
+    if ((computerChoice === "Paper" && playerChoice === "Rock") || (computerChoice === "Scissors" && playerChoice === "Paper") || (computerChoice === "Rock" && playerChoice === "Scissors")) {
+        console.log("You lost!");
+        return 0;
+    }
+    console.log("You win!");
+    return 1;
+}
+
+
+
+
 
 
 
